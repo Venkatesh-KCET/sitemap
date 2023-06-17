@@ -149,6 +149,23 @@ class Url {
 
         }
 
+        if(!empty($news)) {
+
+            if(!isset($news["publication"]["name"])) {
+                throw new Exception("Name Of The Publisher Is Required");
+            }
+            if(!isset($news["publication"]["language"])) {
+                throw new Exception("Language Of The Publisher Is Required");
+            }
+
+            if(!isset($news["publication_date"])) {
+                throw new Exception("publication_date Is Required");
+            }
+            if(!isset($news["title"])) {
+                throw new Exception("title Is Required");
+            }
+            $this->news = $news;
+        }
     }
 }
 
@@ -229,6 +246,9 @@ class Sitemap
             if($this->videoSitemap) {
                 $urlset->setAttribute('xmlns:video', 'http://www.google.com/schemas/sitemap-video/1.1');
             }
+            if($this->newsSitemap) {
+                $urlset->setAttribute('xmlns:news', 'http://www.google.com/schemas/sitemap-news/0.9');
+            }
             $xml->appendChild($urlset);
 
             for ($j = $i; $j < $i + 50000; $j++) {
@@ -239,12 +259,26 @@ class Sitemap
                 $url = $xml->createElement('url');
                 foreach ($this->urls[$j] as $tagName => $tagValue) {
                     if(!empty($tagValue)) {
-                        if($tagName == "images") {
-                            foreach($tagValue as $imageUrl) {
-                                // Create <loc> element for image URL
-                                $Imageloc = $xml->createElement('loc', $imageUrl);
-                                $url->appendChild($Imageloc);
-                            
+                        if($tagName == "news") {
+                            $newsData = $xml->createElement('news:news');
+                
+                            foreach ($tagValue as $key => $value) {
+                                if ($key === 'publication' && is_array($value)) {
+                                    $publicationElement = $xml->createElement('news:publication');
+                                    foreach ($value as $publication_key => $publication_value) {
+                                        $subelement = $xml->createElement("news:{$publication_key}", $publication_value);
+                                        $publicationElement->appendChild($subelement);
+                                    }
+                                    $newsData->appendChild($publicationElement);
+                                } else {
+                                    $element = $xml->createElement("news:{$key}", $value);
+                                    $newsData->appendChild($element);    
+                                }
+                            }
+                
+                            $url->appendChild($newsData);
+                        } else if($tagName == "images") {
+                            foreach($tagValue as $imageUrl) {                            
                                 // Create <image:image> element with <image:loc> for the image URL
                                 $image = $xml->createElement('image:image');
                                 $imageLoc = $xml->createElement('image:loc', $imageUrl);

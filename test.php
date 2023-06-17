@@ -49,6 +49,14 @@ error_reporting(E_ALL);
                 "content_loc" => "http://streamserver.example.com/video123.mp4",
                 "player_loc" => "https://www.example.com/videoplayer.php?video=123"
             ]
+        ],
+        'news' => [
+            'publication' => [
+                'name' => 'The Example Times',
+                'language' => 'en'
+            ],
+            'publication_date' => '2008-12-23',
+            'title' => 'Companies A, B in Merger Talks'
         ]
     ];
     $sitemap->add_url($array);
