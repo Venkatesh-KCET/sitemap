@@ -1,0 +1,26 @@
+{
+    "name": "venkatesh-kcet/sitemap",
+    "description": "Sitemap Generator",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "Sitemap",
+        "Sitemap Generator",
+        "urlset",
+        "siteindex"
+    ],
+    "autoload": {
+        "psr-4": {
+            "VenkateshKcet\\Sitemap\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Venkatesh S",
+            "email": "venkatesh.svpr@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {}
+}
