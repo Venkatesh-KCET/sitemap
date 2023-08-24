@@ -27,7 +27,6 @@ Here is a simple example of how to use the Sitemap Generator Library:
 ### URL Sitemap
 ```php
 <?php
-<?php
     include "vendor/autoload.php";
     use VenkateshKcet\Sitemap\Sitemap;
     $sitemap = new Sitemap();
@@ -40,7 +39,7 @@ Here is a simple example of how to use the Sitemap Generator Library:
 ```
 
 ### Image Sitemap
-```
+```php
 <?php
     include "vendor/autoload.php";
     use VenkateshKcet\Sitemap\Sitemap;
@@ -55,7 +54,7 @@ Here is a simple example of how to use the Sitemap Generator Library:
 ```
 
 ### Video Sitemap
-```
+```php
 <?php
     include "vendor/autoload.php";
     use VenkateshKcet\Sitemap\Sitemap;
@@ -110,7 +109,7 @@ Here is a simple example of how to use the Sitemap Generator Library:
 ```
 
 ### NEWS Sitemap
-```
+```php
 <?php
     include "vendor/autoload.php";
     use VenkateshKcet\Sitemap\Sitemap;
@@ -133,7 +132,7 @@ Here is a simple example of how to use the Sitemap Generator Library:
 ```
 
 ### Combine Sitemap
-```
+```php
 <?php
     include "vendor/autoload.php";
     use VenkateshKcet\Sitemap\Sitemap;
@@ -196,10 +195,10 @@ Here is a simple example of how to use the Sitemap Generator Library:
     $sitemap->write_sitemapIndex($folderPath = __DIR__, $path = "http://localhost/sitemap/");    
 ```
 
-For more detailed usage instructions and configuration options, please refer to the [documentation](https://github.com/your-username/sitemap/docs).
+For more detailed usage instructions and configuration options, please refer to the [documentation](https://github.com/Venkatesh-KCET/sitemap/docs).
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/your-username/sitemap/LICENSE) file for more information.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/Venkatesh-KCET/sitemap/LICENSE) file for more information.
 
 ## Contributing
 Contributions are welcome! If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
