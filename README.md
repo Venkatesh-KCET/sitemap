@@ -210,7 +210,7 @@ Here are a few examples of how you can use the Sitemap Generator Library:
 - Integrate the sitemap generation into a apy web application
 
 ## Support
-If you need any assistance or have any questions, please [open an issue](https://github.com/your-username/sitemap/issues) on GitHub.
+If you need any assistance or have any questions, please [open an issue](https://github.com/Venkatesh-KCET/sitemap/issues) on GitHub.
 
 ---
 
